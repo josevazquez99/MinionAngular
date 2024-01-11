@@ -1,0 +1,10 @@
+<div *ngFor="let minion of minions">
+    <div class="card" style="width: 10rem;">
+        <img src={{minion.img}} class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{minion.name}}</h5>
+        <p class="card-text">{{minion.bio}}</p>
+        <p class="card-text">{{minion.birth}}</p>
+        </div>
+    </div>
+</div>

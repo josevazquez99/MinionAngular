@@ -1,5 +1,5 @@
 {
-  "name": "project-minion",
+  "name": "minion-project",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:projectMinion": "node dist/project-minion/server/server.mjs"
+    "serve:ssr:minionProject": "node dist/minion-project/server/server.mjs"
   },
   "private": true,
   "dependencies": {
