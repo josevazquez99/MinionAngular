@@ -1,3 +1,16 @@
-<app-navbar (search)="searchStart($event)"></app-navbar>
+<!-- <app-navbar (search)="searchStart($event)"></app-navbar>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
+<h1>Minions</h1>
+
+<ul class="list-group">
+  <li *ngFor="let minion of minions" class="list-group-item">
+    {{ minion.id }}
+    {{ minion.bio }}
+    {{ minion.birth }}
+    {{ minion.img }}
+    {{ minion.name }}
+    {{ minion.side }}
+  </li>
+</ul>
