@@ -7,6 +7,7 @@ import { Minion } from '../interfaces/minion';
 export class MinionService {
   minions: Minion[] = [
     {
+      id: "1",
       name: "Kevin",
       bio: "Aquí debería haber una biografía de la vida de este minion, pero son gente muy misteriosa, así que tendrás que imaginártela...",
       img: "assets/img/kevin.jpg",
@@ -14,6 +15,7 @@ export class MinionService {
       side:"de los buenos"
     },
     {
+      id: "2",
       name: "Josua",
       bio: "Aquí debería haber una biografía de la vida de este minion, pero son gente muy misteriosa, así que tendrás que imaginártela...",
       img: "assets/img/Josua.jpg",
@@ -21,6 +23,7 @@ export class MinionService {
       side:"malvado"
     },
     {
+      id: "3",
       name: "Dave",
       bio: "Aquí debería haber una biografía de la vida de este minion, pero son gente muy misteriosa, así que tendrás que imaginártela...",
       img: "assets/img/dave.jpg",
@@ -28,6 +31,7 @@ export class MinionService {
       side: "de los buenos"
     },
     {
+      id: "4",
       name: "Mudito",
       bio: "Aquí debería haber una biografía de la vida de este minion, pero son gente muy misteriosa, así que tendrás que imaginártela...",
       img: "assets/img/mudito.jpeg",
@@ -35,6 +39,7 @@ export class MinionService {
       side:"de los buenos"
     },
     {
+      id: "5",
       name: "Llongueras",
       bio: "Aquí debería haber una biografía de la vida de este minion, pero son gente muy misteriosa, así que tendrás que imaginártela...",
       img: "assets/img/llongueras.jpg",
@@ -42,6 +47,7 @@ export class MinionService {
       side: "malvado"
     },
     {
+      id: "6",
       name: "Minioncé",
       bio: "Le va el cante, dar la nota, ama los karaokes, es el rey y reina de la fiesta. Invítalo a tu fiesta o te arrepentirás.",
       img: "assets/img/minionce.jpg",
@@ -49,6 +55,7 @@ export class MinionService {
       side: "de los buenos"
     },
     {
+      id: "7",
       name: "Lobeznion",
       bio: "No lo enfades, este bichillo tiene muy malas pulgas...aunque sólo mide medio metro y ¡no puede ser más gracioso!",
       img: "assets/img/lobeznion.jpg",
@@ -56,6 +63,7 @@ export class MinionService {
       side: "malvado"
     },
     {
+      id: "8",
       name: "Minion Presley",
       bio: "Aquí debería haber una biografía de la vida de este minion, pero son gente muy misteriosa, así que tendrás que imaginártela...",
       img: "assets/img/minion-presley.jpg",

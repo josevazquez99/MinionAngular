@@ -2,6 +2,7 @@ import { Component, Input, NgModule, OnChanges, OnInit, SimpleChanges } from '@a
 import { MinionService } from '../services/minion.service';
 import { Minion } from '../interfaces/minion';
 import { CommonModule } from '@angular/common';
+import { MinionsService } from '../services/minions.service';
 
 @Component({
   selector: 'app-info-minion',
@@ -12,18 +13,22 @@ import { CommonModule } from '@angular/common';
 })
 export class InfoMinionComponent implements OnChanges {
   @Input() name:string='';
-  minions:Minion[] = [];
+  @Input() id:string = "";
+  minions!:Minion[];
 
-  constructor(private minionService: MinionService){
+  constructor(private minionsService: MinionsService){
   }
   
   ngOnChanges(changes: SimpleChanges): void {
-    this.minions=this.minionService.getFilterMinions(this.name);
-  }
-  
-  ngOnInit(): void {
-    console.log(this.name);
-    this.minions=this.minionService.getFilterName(this.name);
+    this.minionsService.getMinionByName(this.name)
+    .subscribe({
+      next: (minions) => this.minions = minions,
+    })
+
+    this.minionsService.getMinionById(this.id)
+    .subscribe({
+      next: (minions) => this.minions = minions,
+    })
   }
 
 
