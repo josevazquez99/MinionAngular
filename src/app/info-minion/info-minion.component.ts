@@ -14,20 +14,20 @@ import { MinionsService } from '../services/minions.service';
 export class InfoMinionComponent implements OnChanges {
   @Input() name:string='';
   @Input() id:string = "";
-  minions!:Minion[];
+  minion!:Minion;
 
   constructor(private minionsService: MinionsService){
   }
   
   ngOnChanges(changes: SimpleChanges): void {
-    this.minionsService.getMinionByName(this.name)
-    .subscribe({
-      next: (minions) => this.minions = minions,
-    })
+    // this.minionsService.getMinionByName(this.name)
+    // .subscribe({
+    //   next: (minions) => this.minion = minions,
+    // })
 
     this.minionsService.getMinionById(this.id)
     .subscribe({
-      next: (minions) => this.minions = minions,
+      next: (minions) => this.minion = minions,
     })
   }
 

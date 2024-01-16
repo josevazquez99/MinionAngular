@@ -18,12 +18,19 @@ export class MinionsService {
     return this.httpClient.get<Minion[]>(`${this.url}?name=${name}`);
   }
 
-  getMinionById(id:string):Observable<Minion[]>{
-    return this.httpClient.get<Minion[]>(`${this.url}?id=${id}`);
+  getMinionById(id:string):Observable<Minion>{
+    return this.httpClient.get<Minion>(`${this.url}/${id}`);
   }
   
   addMinion(minion: Omit<PositionCallback,"id">){
     return this.httpClient.post<Minion>(this.url,minion);
   }
 
+  editMinion(id : string ,minion : Omit<Minion, "id">) : Observable<Minion>{
+    return this.httpClient.put<Minion>(this.url+"/"+id, minion)
+  }
+
+  deleteMinion(id:String):Observable<Minion>{
+    return this.httpClient.delete<Minion>(`${this.url}/${id}`);
+  }
 }

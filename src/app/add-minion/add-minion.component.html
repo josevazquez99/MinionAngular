@@ -1,0 +1,43 @@
+<div class="container px-5 my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card border-0 rounded-3 shadow-lg">
+          <div class="card-body p-4">
+            <div class="text-center">
+              <div class="h1 fw-light">Add Minion</div>
+            </div>
+  
+            <form method="get" (ngSubmit)="addMinion()">
+              <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Name</label>
+                  <input type="text"  class="form-control" id="name" name="name" placeholder="Enter name" [(ngModel)]="minion.name"  required>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Bio</label>
+                <input type="text"  class="form-control" id="bio" name="bio" placeholder="Enter bio" [(ngModel)]="minion.bio" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Img</label>
+                <input type="text"  class="form-control" id="img" name="img" placeholder="Enter img" [(ngModel)]="minion.img" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Birth</label>
+                <input type="text"  class="form-control" id="birth" name="birth" placeholder="Enter birth" [(ngModel)]="minion.birth" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Side</label>
+                <input type="text"  class="form-control" id="side" name="side" placeholder="Enter side" [(ngModel)]="minion.side" required>
+            </div>
+
+  
+              
+              <div class="d-grid">
+                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit" name="submit">Save</button>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

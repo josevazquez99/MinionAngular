@@ -1,5 +1,5 @@
 export interface Minion{
-    id: String,
+    id: String;
     name: String;
     bio: String;
     img: String;
