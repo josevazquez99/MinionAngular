@@ -4,7 +4,7 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MinionsService } from '../services/minions.service';
-import { Observable } from 'rxjs';
+import { Observable, catchError, ignoreElements, of } from 'rxjs';
 @Component({
   selector: 'app-content',
   standalone: true,
@@ -13,6 +13,9 @@ import { Observable } from 'rxjs';
   styleUrl: './content.component.css'
 })
 export class ContentComponent implements OnInit{
+  error:boolean = false;
+  minionError$!: Observable<any>;
+  errorMessage :any=null;
   @Input() id : string = ""
   minions$! : Observable<Minion[]>;
   minions2: Minion[] = [];
@@ -24,9 +27,12 @@ export class ContentComponent implements OnInit{
     //   next: (minions2) => this.minions2 = minions2
     // })
     this.minions$ = this.minionsService.getMinions();
-
-    this.minionsService.getMinions()
-    .subscribe((next)=>console.log(next), (error)=>console.log(error))
+    this.minionError$=this.minions$.pipe(
+      ignoreElements(),
+      catchError((err)=> of(err))
+    )
+    // this.minionsService.getMinions()
+    // .subscribe((next)=>console.log(next), (error)=>console.log(error))
   }
 
   deleteMinion(id:String){
