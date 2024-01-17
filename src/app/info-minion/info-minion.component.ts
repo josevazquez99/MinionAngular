@@ -3,6 +3,7 @@ import { MinionService } from '../services/minion.service';
 import { Minion } from '../interfaces/minion';
 import { CommonModule } from '@angular/common';
 import { MinionsService } from '../services/minions.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-info-minion',
@@ -13,8 +14,10 @@ import { MinionsService } from '../services/minions.service';
 })
 export class InfoMinionComponent implements OnChanges {
   @Input() name:string='';
-  @Input() id:string = "";
+  @Input('id') identifer:string = "";
   minion!:Minion;
+  ngOnInit():void{}
+
 
   constructor(private minionsService: MinionsService){
   }
