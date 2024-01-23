@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" routerLink="/" routerLinkActive="active">Minioland</a>
+  <div class="container-fluid">
+
+    <a class="navbar-brand" routerLink="/" routerLinkActive="active" >Minioland</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,18 +10,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/minions" routerLinkActive="active">Minions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/addMinion" routerLinkActive="active">Add Minions</a>
+          <a class="nav-link" routerLink="/add" routerLinkActive="active">Add</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0" (ngSubmit)="goTo()">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="term" name="term">
+      <form class="d-flex" (ngSubmit)="search()">
+        <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" (keyup)="search()">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
+  </div>
   </nav>

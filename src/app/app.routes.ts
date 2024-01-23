@@ -1,23 +1,19 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { AppComponent } from './app.component';
-import { NotfoundComponent } from './notfound/notfound.component';
-import { MinionsComponent } from './minions/minions.component';
-import { InfoMinionComponent } from './info-minion/info-minion.component';
-import { InfoMinionChildrenComponent } from './info-minion-children/info-minion-children.component';
-import { AddMinionComponent } from './add-minion/add-minion.component';
-import { EditMinionComponent } from './edit-minion/edit-minion.component';
+import { MinionsListComponent } from './minions-list/minions-list.component';
+import { MinionDetailsComponent } from './minion-details/minion-details.component';
+import { MinionFormComponent } from './minion-form/minion-form.component';
 
 export const routes: Routes = [
-    {path:'',component:HomeComponent},
-    {path:'home',component:HomeComponent},
-    {path:'minions',component:MinionsComponent,
-        children:[
-            {path:'infoMinionChildren/:id',component:InfoMinionChildrenComponent},
+    {path: '', component: HomeComponent},
+    {path: 'minions', component: MinionsListComponent,
+        children: [
+            {path: ':id', component: MinionDetailsComponent}
+
         ]
     },
-    {path:'infoMinion/:id',component:InfoMinionComponent},
-    {path:'editMinion/:id',component:EditMinionComponent},
-    {path:'addMinion',component:AddMinionComponent},
-    {path:'**',component:NotfoundComponent}
+    {path: 'search/:search', component: MinionsListComponent},
+    {path: 'add', component: MinionFormComponent},
+    {path: 'edit/:id', component: MinionFormComponent},
+    {path: '**', redirectTo: ''}
 ];

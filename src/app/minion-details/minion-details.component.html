@@ -1,0 +1,17 @@
+@if (minion$|async; as minion) {
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+    
+                <div class="card h-100" style="width: 18rem;">
+                    <img [src]="'/'+minion.img" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{minion.name}}</h5>
+                        <p class="card-text">{{minion.bio}}</p>
+                        <a (click)="return()" class="btn btn-primary">Return</a>
+                        <button class="btn btn-primary" (click)="edit(minion.id)">Edit</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+}
